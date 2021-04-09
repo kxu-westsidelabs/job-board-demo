@@ -1,0 +1,82 @@
+{
+  "settings": {
+    "minWordSizefor1Typo": 4,
+    "minWordSizefor2Typos": 8,
+    "hitsPerPage": 20,
+    "maxValuesPerFacet": 100,
+    "attributesToIndex": [
+      "unordered(job_title)",
+      "unordered(job_description)",
+      "unordered(country)"
+    ],
+    "numericAttributesToIndex": null,
+    "attributesToRetrieve": null,
+    "unretrievableAttributes": null,
+    "optionalWords": null,
+    "attributesForFaceting": [
+      "sponsored"
+    ],
+    "attributesToSnippet": [
+      "job_description:16"
+    ],
+    "attributesToHighlight": null,
+    "paginationLimitedTo": 1000,
+    "attributeForDistinct": null,
+    "exactOnSingleWordQuery": "attribute",
+    "ranking": [
+      "typo",
+      "geo",
+      "words",
+      "filters",
+      "proximity",
+      "attribute",
+      "exact",
+      "custom"
+    ],
+    "customRanking": [
+      "desc(sponsored)"
+    ],
+    "separatorsToIndex": "",
+    "removeWordsIfNoResults": "none",
+    "queryType": "prefixLast",
+    "highlightPreTag": "<em>",
+    "highlightPostTag": "</em>",
+    "snippetEllipsisText": "",
+    "alternativesAsExact": [
+      "ignorePlurals",
+      "singleWordSynonym"
+    ]
+  },
+  "rules": [
+    {
+      "_metadata": {
+        "lastUpdate": 1617917545
+      },
+      "enabled": true,
+      "tags": [
+        "visual-editor"
+      ],
+      "description": "Sponsored Job - Solutions Engineer",
+      "conditions": [
+        {
+          "anchoring": "contains",
+          "pattern": "solutions engineer",
+          "alternatives": true
+        }
+      ],
+      "consequence": {
+        "promote": [
+          {
+            "objectIDs": [
+              "1069906002"
+            ],
+            "position": 0
+          }
+        ],
+        "filterPromotes": true
+      },
+      "objectID": "qr-1617917519285"
+    }
+  ],
+  "synonyms": []
+}
