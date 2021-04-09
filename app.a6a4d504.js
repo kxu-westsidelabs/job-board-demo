@@ -124,24 +124,23 @@ var search = instantsearch({
   indexName: 'dev_JOBS',
   searchClient: searchClient
 });
-search.addWidgets([// TODO: add basic filters to search box
-instantsearch.widgets.searchBox({
+search.addWidgets([instantsearch.widgets.searchBox({
   container: '#searchbox'
 }), instantsearch.widgets.stats({
   container: "#stats"
-}), // TODO: Change the UI
-instantsearch.widgets.hits({
+}), instantsearch.widgets.hits({
   container: '#hits',
   empty: "No results found.",
   templates: {
     item: function item(hit) {
-      var sponsored = hit.sponsored === "true" ? "<span>\u2705 &nbsp; sponsored</span>" : '';
+      var sponsored = hit.sponsored === "true" ? "<span>\u2705 &nbsp; sponsored</span>" : ''; // check for invalid location data
+
       var location = hit.location.length < 16 ? "<div>\uD83D\uDCCD &nbsp; ".concat(hit.location, ", ").concat(hit.country_code, "</div>") : "<div>\uD83D\uDCCD &nbsp; ".concat(hit.country_code, "</div>");
       var job_type = hit.job_type ? "<div>\uD83C\uDFE2 &nbsp; ".concat(hit.job_type, "</div>") : "";
       return "\n                    ".concat(sponsored, "\n                    <h3>").concat(instantsearch.highlight({
         attribute: 'job_title',
         hit: hit
-      }), "</h3>\n                    ").concat(location, "\n                    ").concat(job_type, "\n                    </p>\n                    <p>").concat(instantsearch.snippet({
+      }), "</h3>\n                    ").concat(location, "\n                    ").concat(job_type, "\n                    <p>").concat(instantsearch.snippet({
         attribute: 'job_description',
         hit: hit
       }), "</p>\n                ");
@@ -179,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64151" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49745" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
