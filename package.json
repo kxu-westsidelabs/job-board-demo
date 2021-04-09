@@ -2,13 +2,14 @@
   "name": "job-board",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://kxu-westsidelabs.github.io/job-board-demo/",
   "scripts": {
     "start": "parcel index.html --port 3000",
-    "build": "parcel build index.html",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
+    "build": "parcel build index.html --public-url ./job-board-demo",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
