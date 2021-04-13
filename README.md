@@ -40,6 +40,8 @@ I added in a ranking rule for the `sponsored`,
 
 In order to boost sponsored posts, I added in a ranking rule for records where `sponsored` is `true`, and then set an explicit rule to pin posts that matched certain queries. In this case, any query matching `solutions engineer` will return results where the first hit is a listing from Algolia.
 
+![Pinned Results](./pinned_results.png)
+
 Index configs are in [config.json](https://github.com/kxu-westsidelabs/job-board-demo/blob/master/config.json).
 
 ## Get started
